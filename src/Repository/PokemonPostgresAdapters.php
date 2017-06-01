@@ -2,7 +2,16 @@
 
 namespace Evaneos\Archi\Repository;
 
+use Doctrine\DBAL\Connection;
+
 class PokemonPostgresAdapters implements PokemonDAInterface {
+
+    private $db;
+
+    public function __construct(Connection $connection) {
+        $this->db = $connection;
+    }
+
     public function add($type, $level) {
 
     }
